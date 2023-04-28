@@ -61,11 +61,5 @@ pipeline {
       }
     }
 
-    stage('Deploy to LIVE') {
-      steps {
-        sh 'echo "stage of deploy live"'
-      }
-    }
-
   }
 }
