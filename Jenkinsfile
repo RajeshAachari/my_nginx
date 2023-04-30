@@ -50,8 +50,25 @@ pipeline {
     }
 
     stage('Deploy DEV') {
-      steps {
-        sh 'echo "stage of deploy"'
+      parallel {
+        stage('Deploy DEV') {
+          steps {
+            sh 'echo "stage of deploy"'
+          }
+        }
+
+        stage('Production') {
+          steps {
+            sh 'echo "stage of production"'
+          }
+        }
+
+        stage('Operation') {
+          steps {
+            sh 'echo "this stage of Operation"'
+          }
+        }
+
       }
     }
 
